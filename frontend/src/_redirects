@@ -1,0 +1,12 @@
+# Redirect all traffic to Angular app
+/*    /index.html   200
+
+# Headers for better performance
+/assets/*
+  Cache-Control: public, max-age=31536000
+
+# Security headers
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://pestzonepestcontrol.co.in/sitemap.xml
+
+# Block common crawlers from unnecessary paths
+User-agent: *
+Disallow: /assets/temp/
+Disallow: /*.pdf$
+Disallow: /admin/
+Disallow: /private/
+
+# Allow important pages
+Allow: /
+Allow: /#services
+Allow: /#about  
+Allow: /#contact
+
+# Crawl-delay (optional - only if needed)
+# Crawl-delay: 1

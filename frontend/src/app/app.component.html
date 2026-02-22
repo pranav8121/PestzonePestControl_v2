@@ -1,0 +1,274 @@
+<!-- Header Section -->
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <div class="logo-section">
+        <div class="logo">
+          <i class="fas fa-shield-virus" style="color: #2c5aa0; font-size: 2rem;"></i>
+        </div>
+        <div class="company-info">
+          <h1 class="full-title">{{ businessInfo.name }}</h1>
+          <h1 class="mobile-title">PEST Zone</h1>
+          <p class="tagline">Professional Pest Control Services</p>
+        </div>
+      </div>
+      
+      <div class="contact-header">
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <a [href]="'tel:' + businessInfo.phones[0]" class="phone-link">{{ businessInfo.phones[0] }}</a>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <a [href]="'tel:' + businessInfo.phones[1]" class="phone-link">{{ businessInfo.phones[1] }}</a>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>{{ businessInfo.email }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container">
+      <ul class="nav-menu">
+        <li class="nav-item" (click)="scrollToSection('home')">Home</li>
+        <li class="nav-item" (click)="scrollToSection('services')">Services</li>
+        <li class="nav-item" (click)="scrollToSection('about')">About Us</li>
+        <li class="nav-item" (click)="scrollToSection('contact')">Contact</li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+  <div class="container">
+    <div class="hero-content fade-in-up">
+      <h2><span class="mobile-hero-title">Professional Pest Control<br>Services in Mumbai</span><span class="desktop-hero-title">Professional Pest Control Services in Mumbai</span></h2>
+      <p>Organic, Eco-Friendly & Safe Pest Solutions for Your Home & Business. 
+         Get rid of pests with our effective, non-toxic treatments that protect your family.</p>
+      
+      <div class="hero-buttons">
+        <a (click)="makeCall(businessInfo.phones[0])" class="cta-button pulse">
+          <i class="fas fa-phone"></i>
+          Call Now for Instant Service
+        </a>
+        <a (click)="sendWhatsApp(businessInfo.phones[0])" class="cta-button secondary">
+          <i class="fab fa-whatsapp"></i>
+          WhatsApp Us
+        </a>
+        <a (click)="scrollToSection('contact')" class="cta-button secondary">
+          <i class="fas fa-calendar-check"></i>
+          Get Free Quote
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="services section">
+  <div class="container">
+    <h2 class="section-title fade-in-up">Our Pest Control Services in Mumbai</h2>
+    
+    <div class="services-grid fade-in-up" itemscope itemtype="https://schema.org/ServiceCatalog">
+      <article class="service-card" *ngFor="let service of services" itemscope itemtype="https://schema.org/Service">
+        <div class="service-icon">
+          <i [class]="service.icon"></i>
+        </div>
+        <h3 itemprop="name">{{ service.title }}</h3>
+        <p itemprop="description">{{ service.description }}</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about section">
+  <div class="container">
+    <h2 class="section-title fade-in-up">Why Choose PEST Zone?</h2>
+    
+    <article class="about-content fade-in-up">
+      <div class="about-text">
+        <h3>Organic & Eco-Friendly Pest Control in Mumbai</h3>
+        <p>
+          At <strong>PEST Zone Pest Control</strong>, we believe in protecting your family and the environment. 
+          Our <em>organic pest control solutions</em> are carefully formulated to be effective against pests 
+          while being completely safe for humans, pets, and the ecosystem.
+        </p>
+        <p>
+          With over a decade of experience in <strong>Mumbai pest control</strong>, we understand the unique pest challenges 
+          faced by homes and businesses in our city. Our trained professionals use the latest 
+          techniques and eco-friendly products to ensure lasting results.
+        </p>
+        
+        <ul class="features-list">
+          <li><i class="fas fa-check-circle"></i> 100% Organic & Chemical-Free Solutions</li>
+          <li><i class="fas fa-check-circle"></i> Safe for Children and Pets</li>
+          <li><i class="fas fa-check-circle"></i> Licensed & Experienced Technicians</li>
+          <li><i class="fas fa-check-circle"></i> Guaranteed Results with Warranty</li>
+          <li><i class="fas fa-check-circle"></i> Emergency Same-Day Service Available</li>
+          <li><i class="fas fa-check-circle"></i> Eco-Friendly & Environment Safe</li>
+        </ul>
+      </div>
+      
+      <aside class="about-image">
+        <i class="fas fa-leaf"></i>
+        <h4>Eco-Friendly Solutions</h4>
+        <p>Our commitment to sustainability means using only organic, biodegradable treatments that break down naturally without harming the environment.</p>
+      </aside>
+    </article>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact section">
+  <div class="container">
+    <h2 class="section-title fade-in-up">Get In Touch</h2>
+    
+    <div class="contact-content fade-in-up">
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        
+        <div class="info-item">
+          <i class="fas fa-phone"></i>
+          <div>
+            <h4>Call Us</h4>
+            <p>
+              <a [href]="'tel:' + businessInfo.phones[0]" class="phone-link" style="color: #2c5aa0; text-decoration: none;">
+                {{ businessInfo.phones[0] }}
+              </a><br>
+              <a [href]="'tel:' + businessInfo.phones[1]" class="phone-link" style="color: #2c5aa0; text-decoration: none;">
+                {{ businessInfo.phones[1] }}
+              </a>
+            </p>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <h4>Email Us</h4>
+            <p>{{ businessInfo.email }}</p>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <h4>Visit Us</h4>
+            <p>{{ businessInfo.address }}</p>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <i class="fas fa-clock"></i>
+          <div>
+            <h4>Service Hours</h4>
+            <p>Monday - Sunday: 7:00 AM - 9:00 PM<br>
+               Emergency Service: 24/7 Available</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form">
+        <h3>Request a Callback</h3>
+        <p style="color: #666; margin-bottom: 1.5rem;">
+          Fill out the form below and we'll call you back within 30 minutes during business hours.
+        </p>
+        
+        <div *ngIf="submitMessage" [class]="'submit-message ' + (submitSuccess ? 'success' : 'error')">
+          {{ submitMessage }}
+        </div>
+        
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Full Name *</label>
+              <input 
+                type="text" 
+                class="form-control"
+                [class.is-invalid]="getFormControl('name')?.invalid && getFormControl('name')?.touched"
+                formControlName="name"
+                placeholder="Enter your full name">
+              <div *ngIf="getFormControl('name')?.invalid && getFormControl('name')?.touched" class="invalid-feedback">
+                <div *ngIf="getFormControl('name')?.errors?.['required']">Name is required</div>
+                <div *ngIf="getFormControl('name')?.errors?.['minlength']">Name must be at least 2 characters</div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Phone Number *</label>
+              <input 
+                type="tel" 
+                class="form-control"
+                [class.is-invalid]="getFormControl('phone')?.invalid && getFormControl('phone')?.touched"
+                formControlName="phone"
+                placeholder="Enter 10-digit mobile number">
+              <div *ngIf="getFormControl('phone')?.invalid && getFormControl('phone')?.touched" class="invalid-feedback">
+                <div *ngIf="getFormControl('phone')?.errors?.['required']">Phone number is required</div>
+                <div *ngIf="getFormControl('phone')?.errors?.['pattern']">Please enter a valid 10-digit phone number</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Email (Optional)</label>
+            <input 
+              type="email" 
+              class="form-control"
+              [class.is-invalid]="getFormControl('email')?.invalid && getFormControl('email')?.touched"
+              formControlName="email"
+              placeholder="Enter your email address">
+            <div *ngIf="getFormControl('email')?.invalid && getFormControl('email')?.touched" class="invalid-feedback">
+              <div *ngIf="getFormControl('email')?.errors?.['email']">Please enter a valid email address</div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Message (Optional)</label>
+            <textarea 
+              class="form-control" 
+              formControlName="message"
+              rows="4"
+              placeholder="Describe your pest problem or any specific requirements..."></textarea>
+          </div>
+          
+          <button 
+            type="submit" 
+            class="btn btn-primary btn-large"
+            [disabled]="isSubmitting"
+            style="width: 100%; margin-top: 1rem;">
+            <i class="fas fa-paper-plane" *ngIf="!isSubmitting"></i>
+            <i class="fas fa-spinner fa-spin" *ngIf="isSubmitting"></i>
+            {{ isSubmitting ? 'Submitting...' : 'Request Callback' }}
+          </button>
+        </form>
+        
+        <div style="text-align: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #eee;">
+          <p style="color: #666; margin-bottom: 1rem;">Or call us directly:</p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <button (click)="makeCall(businessInfo.phones[0])" class="btn btn-success">
+              <i class="fas fa-phone"></i> {{ businessInfo.phones[0] }}
+            </button>
+            <button (click)="makeCall(businessInfo.phones[1])" class="btn btn-success">
+              <i class="fas fa-phone"></i> {{ businessInfo.phones[1] }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2024 {{ businessInfo.name }}. All rights reserved.</p>
+    <p>Professional Pest Control Services in Mumbai | Organic & Eco-Friendly Solutions</p>
+    <p>Licensed & Insured | Emergency Service Available 24/7</p>
+  </div>
+</footer>
