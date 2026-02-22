@@ -1,6 +1,8 @@
 {
   "name": "pestzone-frontend",
   "version": "0.0.0",
+  "author": "Pranav Patil <pranav08.tech@gmail.com>",
+  "description": "Professional pest control website for PEST Zone Pest Control - Mumbai",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
