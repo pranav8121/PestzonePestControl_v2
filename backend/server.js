@@ -53,7 +53,7 @@ app.post('/api/contact', async (req, res) => {
         // Email content
         const mailOptions = {
             from: process.env.EMAIL_USER || 'santoshkadam1916@gmail.com',
-            to: 'pranavpatil8121@gmail.com',
+            to: process.env.EMAIL_USER_TO || 'santoshkadam1916@gmail.com',
             subject: 'New Enquiry from PEST Zone Website',
             html: `
                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
