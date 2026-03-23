@@ -22,7 +22,7 @@ export class AppComponent {
   businessInfo = {
     name: 'Pestzone Pest Control',
     phones: ['+91-9819553739'],
-    email: 'santoshkadam1916@gmail.com',
+    email: 'pritireddy49@gmail.com',
     address: 'Katodi pada, Ramchandra B Kadam Marg, near Kajrolkar society, Ghatkopar, Mumbai, Maharashtra 400084'
   };
 
